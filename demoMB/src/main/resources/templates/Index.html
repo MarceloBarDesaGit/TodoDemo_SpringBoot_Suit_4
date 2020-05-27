@@ -13,10 +13,11 @@ Descripción  : Permitira al usuario o Administrador porder consultar los movimie
                         b. Ver todos los Inspectores de ls Grupos que controla.               
 PostCondición: Obtener una estadística precisa de la producción individual de los Inpectores
                y como se encuentra el trabajo realizado a nivel de Grupo.
-Versión      : 1.0.0
-Autor:       : Grupo GIEM
+Versión      : 1.1.0
+Autor:       : Barbieri Marcelo - GIEM
 Fecha        : 22/01/2019
-Fecha Modif. : 
+Fecha Modif. : 27/05/2020
+Tipo Modificación: Cambio de Software, uso de SpringBoot Suite 4.0 - Maven.
 ------------------------------------------------------------------------------------
 -->
  <!-- 
@@ -35,26 +36,20 @@ Fecha Modif. :
  <!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Proyecto DemoMB</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="css/modern-business.css" rel="stylesheet">
-
-</head>
-
+	<head>	
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <meta name="description" content="Sistema de Gesti&oacute;n de Inspecciones Edilicias Municipales (GIEM)">
+	    <meta name="author" content="Barbieri Marcelo E. - GIEM">
+	  <!-- Titulo Principarl -->	    	
+	    <title>Inspecciones GIEM</title>	
+	  <!-- Bootstrap core CSS -->
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">	
+	  <!-- Custom styles for this template -->
+		<link href="css/modern-business.css" rel="stylesheet">	
+	</head>
 
   <body>
-
  <!-- ----------- Inicio de Barra de Navigation -------- -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
@@ -169,7 +164,9 @@ Fecha Modif. :
           <div class="card h-100">
             <h4 class="card-header">Portal de Director de Obra - Requisitos</h4>
             <div class="card-body">
-              <p class="card-text">Nuevo Portal permite a los profesionales que ejercen como Directores de Obra llevar su propio control de los tr&aacute;mites realizados ante la Direcci&oacute;n General de Fiscalizaci&oacute;n y Control de Obras.</p>
+              <p class="card-text">Nuevo Portal permite a los profesionales que ejercen como Directores de Obra 
+              			llevar su propio control de los tr&aacute;mites realizados ante la Direcci&oacute;n General 
+              			de Fiscalizaci&oacute;n y Control de Obras.</p>
             </div>
             <div class="card-footer">
               <a href="http://www.buenosaires.gob.ar/agc/portal-de-director-de-obra" class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
@@ -178,12 +175,15 @@ Fecha Modif. :
         </div>
         <div class="col-lg-4 mb-4">
           <div class="card h-100">
-            <h4 class="card-header">Fiscalización y control de obras</h4>
+            <h4 class="card-header">Fiscalizaci&oacute;n y control de obras</h4>
             <div class="card-body">
-              <p class="card-text">La Direcci&oacute;n general de fiscalizaci&oacute;n y control de obras es la encargada de ejercer la fiscalizaci&oacute;n e inspecci&oacute;n de las obras civiles, p&uacute;blicas y privadas, nuevas o remodelaciones..</p>
+              <p class="card-text">La Direcci&oacute;n general de fiscalizaci&oacute;n y control de obras es la encargada 
+              			de ejercer la fiscalizaci&oacute;n e inspecci&oacute;n de las obras civiles, p&uacute;blicas y 
+              			privadas, nuevas o remodelaciones..</p>
             </div>
             <div class="card-footer">
-              <a href="http://www.buenosaires.gob.ar/agc/guia-de-tramites-de-la-agc/fiscalizacion-y-control-de-obras" class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
+              <a href="http://www.buenosaires.gob.ar/agc/guia-de-tramites-de-la-agc/fiscalizacion-y-control-de-obras" 
+              		class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
             </div>
           </div>
         </div>
@@ -191,7 +191,9 @@ Fecha Modif. :
           <div class="card h-100">
             <h4 class="card-header">Obras con toda la informaci&oacute;n de obras p&uacute;blicas de la Ciudad</h4>
             <div class="card-body">
-              <p class="card-text">El Gobierno de la Ciudad de Buenos Aires lanz&oacute; la plataforma BA Obras, un sitio web donde los vecinos pueden conocer en detalle las 837 obras p&uacute;blicas que se est&aacute;n realizando en la Ciudad.</p>
+              <p class="card-text">El Gobierno de la Ciudad de Buenos Aires lanz&oacute; la plataforma BA Obras, un sitio web 
+              			donde los vecinos pueden conocer en detalle las 837 obras p&uacute;blicas que se est&aacute;n 
+              			realizando en la Ciudad.</p>
             </div>
             <div class="card-footer">
               <a href="http://www.buenosaires.gob.ar/baobras" class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
@@ -206,7 +208,10 @@ Fecha Modif. :
           <div class="card h-100">
             <h4 class="card-header">Nuevos c&oacute;digos Urban&iacute;stico y de Edificaci&oacute;n</h4>
             <div class="card-body">
-              <p class="card-text">Le dio sanci&oacute;n definitiva la Legislatura de la Ciudad. Se trata de dos de los marcos normativos más importantes: el primero regula d&oacute;nde, cuánto y con qu&eacute; criterios se debe construir, mientras que el segundo establece cómo y con qué materiales..</p>
+              <p class="card-text">Le dio sanci&oacute;n definitiva la Legislatura de la Ciudad. Se trata de 
+              			dos de los marcos normativos m&aacute;ns importantes: el primero regula d&oacute;nde, cu&aacute;nnto
+              			 y con qu&eacute; cr&iacute;nterios se debe construir, mientras que el segundo establece 
+              			 c&oacute;nmo y con qu&eacute;n materiales..</p>
             </div>
             <div class="card-footer">
               <a href="hhttp://www.buenosaires.gob.ar/desarrollourbano/noticias/las-10-claves-para-entender-que-cambia-en-buenos-aires-con-los-nuevos" class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
@@ -217,10 +222,14 @@ Fecha Modif. :
           <div class="card h-100">
             <h4 class="card-header">Registros, Interpretaci&oacute;n y Catastro</h4>
             <div class="card-body">
-              <p class="card-text">Registra los proyectos de obras p&uacute;blicas y privadas, de acuerdo a la normativa vigente. Analiza, interpreta y supervisa la aplicaci&oacute;n de la normativa en cuanto a uso del suelo, tejido, y patrimonio urbano. Registra y actualiza el catastro f&iacute;sico de la Ciudad..</p>
+              <p class="card-text">Registra los proyectos de obras p&uacute;blicas y privadas, de acuerdo a la 
+              			normativa vigente. Analiza, interpreta y supervisa la aplicaci&oacute;n de la normativa 
+              			en cuanto a uso del suelo, tejido, y patrimonio urbano. Registra y actualiza el catastro 
+              			f&iacute;sico de la Ciudad..</p>
             </div>
             <div class="card-footer">
-              <a href="http://www.buenosaires.gob.ar/planificacion/registrosinterpretacionycatastro" class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
+              <a href="http://www.buenosaires.gob.ar/planificacion/registrosinterpretacionycatastro" 
+              		class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
             </div>
           </div>
         </div>
@@ -228,10 +237,12 @@ Fecha Modif. :
           <div class="card h-100">
             <h4 class="card-header">Autogesti&oacute;n de Liquidaci&oacute;n de Derechos de Obra</h4>
             <div class="card-body">
-              <p class="card-text">Permite realizar la liquidaci&oacute;n de derechos para Obra Nueva-Plano Único, Obra Nueva-Otros Destinos, Instalaciones y Aviso de Obra. Descargar Documentaci&oacute;n.</p>
+              <p class="card-text">Permite realizar la liquidaci&oacute;n de derechos para Obra Nueva-Plano &Uacute;nnico, 
+              			Obra Nueva-Otros Destinos, Instalaciones y Aviso de Obra. Descargar Documentaci&oacute;n.</p>
             </div>
             <div class="card-footer">
-              <a href="http://www.buenosaires.gob.ar/planificacion/registrosinterpretacionycatastro/autogestion-de-liquidacion-de-derechos-de-obra" class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
+              <a href="http://www.buenosaires.gob.ar/planificacion/registrosinterpretacionycatastro/autogestion-de-liquidacion-de-derechos-de-obra" 
+              		class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
             </div>
           </div>
         </div>
@@ -252,7 +263,11 @@ Fecha Modif. :
              <li>Confecci&oacute;n de Informes Finales en archivos PDF.</li>
              <li>Administraci&oacute;n de par&aacute;metros generales.</li>
           </ul>
-          <p>El objetivo del sistema de Gesti&oacute;n de Inspecciones Edilicias Municipales (GIEM) es la facilitaci&oacute;n de todo el proceso de inspecciones, desde el momento de la carga de una denuncia ó la inscripcíón de una obra, hasta los Circuitos complementarios Legales, &eacute;ste debe manejarse sobre dos grandes pilares de la tecnolog&iacute;a actual: la web y los servicios m&oacute;viles. </p>
+          <p>El objetivo del sistema de Gesti&oacute;n de Inspecciones Edilicias Municipales (GIEM) es la 
+          				facilitaci&oacute;n de todo el proceso de inspecciones, desde el momento de la carga 
+          				de una denuncia ó la inscripcíón de una obra, hasta los Circuitos complementarios Legales, 
+          				&eacute;ste debe manejarse sobre dos grandes pilares de la tecnolog&iacute;a actual: la 
+          				web y los servicios m&oacute;viles. </p>
         </div>
         <div class="col-lg-6">
           <img class="img-fluid rounded" src="images/TecnologiasObras.jpg" height="450" width="700">          
@@ -265,10 +280,12 @@ Fecha Modif. :
       <!-- Call to Action Section -->
       <div class="row mb-4">
         <div class="col-md-8">
-          <p>Para hacer una Ubicaci&oacute;n r&aacute;pida de las Zonas de inspecci&oacute;n, se puede acceder directamete al Mapa Interactivo.</p>
+          <p>Para hacer una Ubicaci&oacute;n r&aacute;pida de las Zonas de inspecci&oacute;n, se puede 
+          				acceder directamete al Mapa Interactivo.</p>
         </div>
         <div class="col-md-4">
-          <a class="btn btn-lg btn-primary btn-block" href="http://mapa.buenosaires.gob.ar/comollego/?lat=-34.620000&lng=-58.440000&zl=12&modo=transporte">Ir al Mapa Interactivo</a>
+          <a class="btn btn-lg btn-primary btn-block" href="http://mapa.buenosaires.gob.ar/comollego/?lat=-34.620000&lng=-58.440000&zl=12&modo=transporte">
+          			Ir al Mapa Interactivo</a>
         </div>
       </div>
 
@@ -278,7 +295,7 @@ Fecha Modif. :
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Grupo GIEM S.A. 2017 - 2019  -  Website Oficial: www.GIEM.com </p>
+        <p class="m-0 text-center text-white">Copyright (&copy;) Barbieri Marcelo - GIEM (2018 - 2020)  -  Website Oficial: www.GIEM.com </p>
       </div>
       <!-- /.container -->
     </footer>
