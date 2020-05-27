@@ -1,0 +1,292 @@
+<!-- 
+------------------------------------------------------------------------------------
+PreCondición : Estar Logeado como Administrador o Calificador.
+Descripción  : Permitira al usuario o Administrador porder consultar los movimientos 
+               que tienen los inspectores, con respecto a los tickets Inpseccionados, 
+               Pendientes y Reprogramados, su Radio - Zona de trabajo y la Localización
+               dentro de un mapa para una facil visualización. 
+               1.- Sí el rol es de Clasificador, puede ver:
+                        a. De un Inspector particular de su Grupo y Área.
+                        b. Ver todos los Inspectores del Grupo que controla.
+               2.- Sí el rol es de Administrador, puede ver:     
+                        a. De un Inspector particular de cualquier Área de las DGs.
+                        b. Ver todos los Inspectores de ls Grupos que controla.               
+PostCondición: Obtener una estadística precisa de la producción individual de los Inpectores
+               y como se encuentra el trabajo realizado a nivel de Grupo.
+Versión      : 1.0.0
+Autor:       : Grupo GIEM
+Fecha        : 22/01/2019
+Fecha Modif. : 
+------------------------------------------------------------------------------------
+-->
+ <!-- 
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>DemoMB</title>
+	</head>
+	
+	<body>
+		hello world !!!!
+	</body>
+</html>
+ -->
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Proyecto DemoMB</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/modern-business.css" rel="stylesheet">
+
+</head>
+
+
+  <body>
+
+ <!-- ----------- Inicio de Barra de Navigation -------- -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">G.I.E.M.</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+             <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="pages/acercaDe.html">Quienes Somos</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="pages/servicios.html">Productos</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="pages/portfolio.html">Clientes</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="pages/faq.html">Preguntas Frecuentes</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="pages/contact.html">Contacto</a>
+            </li>
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Usuario Registrado
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                 <a class="dropdown-item" href="GIEMenu/pages/forms_Login.html">Iniciar Sesi&oacute;n</a>
+                 <a class="dropdown-item" href="GIEMenu/pages/forms_Login.html">Cerrar Sesi&oacute;n del Usuario</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+ <!-- ----------- FIN  de Barra de Navigation -------- -->
+ 
+    <header>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+      <!-- Inicio de las Imagenes del carrusel -------------------------- -->         
+        <div class="carousel-inner" role="listbox">
+        
+          <div class="carousel-item active" style="background-image: url('images/Contruccion_1.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Obras en AVO 1 - 2</h2>
+              <h3>Inspecciones en las primeras Fases de la Construcci&oacute;n.</h3>
+            </div>
+          </div>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('images/Contruccion_2.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Inspecciones Exaustivas</h2>
+              <h3>Uso de Controles con Checklist desarrollados bajo las normas de Construcci&oacute;n.</h3>
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('images/Contruccion_3.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Obras en AVO 3 -4</h2>
+              <h3>Inspecciones en las Fases avanzadas de la Construcci&oacute;n.</h3>
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('images/Contruccion_4.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Obras en AVO 5</h2>
+              <h3>Inspecci&oacute;n gneral con otras &Aacute;reas para la entrega de la Obra ya finalizada.</h3>
+            </div>
+          </div>
+        </div>
+      <!-- Fin de las Imagenes del carrusel-------------------------- -->
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </header>
+ <!-- -------------------------------------------------------------------------------------- -->
+    <!--Comtenido de la Pagina -->
+    <div class="container">
+
+      <h1>Bienvenidos al Sistema G.I.E.M.</h1>
+      <h4>Gesti&oacute;n de Inspecciones Edilicias Municipales</h4>   
+      <br>  
+
+      <!-- Inicio de la Informacion para los Usuarios -->
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Portal de Director de Obra - Requisitos</h4>
+            <div class="card-body">
+              <p class="card-text">Nuevo Portal permite a los profesionales que ejercen como Directores de Obra llevar su propio control de los tr&aacute;mites realizados ante la Direcci&oacute;n General de Fiscalizaci&oacute;n y Control de Obras.</p>
+            </div>
+            <div class="card-footer">
+              <a href="http://www.buenosaires.gob.ar/agc/portal-de-director-de-obra" class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Fiscalización y control de obras</h4>
+            <div class="card-body">
+              <p class="card-text">La Direcci&oacute;n general de fiscalizaci&oacute;n y control de obras es la encargada de ejercer la fiscalizaci&oacute;n e inspecci&oacute;n de las obras civiles, p&uacute;blicas y privadas, nuevas o remodelaciones..</p>
+            </div>
+            <div class="card-footer">
+              <a href="http://www.buenosaires.gob.ar/agc/guia-de-tramites-de-la-agc/fiscalizacion-y-control-de-obras" class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Obras con toda la informaci&oacute;n de obras p&uacute;blicas de la Ciudad</h4>
+            <div class="card-body">
+              <p class="card-text">El Gobierno de la Ciudad de Buenos Aires lanz&oacute; la plataforma BA Obras, un sitio web donde los vecinos pueden conocer en detalle las 837 obras p&uacute;blicas que se est&aacute;n realizando en la Ciudad.</p>
+            </div>
+            <div class="card-footer">
+              <a href="http://www.buenosaires.gob.ar/baobras" class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!--Segunda fila de información-->
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Nuevos c&oacute;digos Urban&iacute;stico y de Edificaci&oacute;n</h4>
+            <div class="card-body">
+              <p class="card-text">Le dio sanci&oacute;n definitiva la Legislatura de la Ciudad. Se trata de dos de los marcos normativos más importantes: el primero regula d&oacute;nde, cuánto y con qu&eacute; criterios se debe construir, mientras que el segundo establece cómo y con qué materiales..</p>
+            </div>
+            <div class="card-footer">
+              <a href="hhttp://www.buenosaires.gob.ar/desarrollourbano/noticias/las-10-claves-para-entender-que-cambia-en-buenos-aires-con-los-nuevos" class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Registros, Interpretaci&oacute;n y Catastro</h4>
+            <div class="card-body">
+              <p class="card-text">Registra los proyectos de obras p&uacute;blicas y privadas, de acuerdo a la normativa vigente. Analiza, interpreta y supervisa la aplicaci&oacute;n de la normativa en cuanto a uso del suelo, tejido, y patrimonio urbano. Registra y actualiza el catastro f&iacute;sico de la Ciudad..</p>
+            </div>
+            <div class="card-footer">
+              <a href="http://www.buenosaires.gob.ar/planificacion/registrosinterpretacionycatastro" class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Autogesti&oacute;n de Liquidaci&oacute;n de Derechos de Obra</h4>
+            <div class="card-body">
+              <p class="card-text">Permite realizar la liquidaci&oacute;n de derechos para Obra Nueva-Plano Único, Obra Nueva-Otros Destinos, Instalaciones y Aviso de Obra. Descargar Documentaci&oacute;n.</p>
+            </div>
+            <div class="card-footer">
+              <a href="http://www.buenosaires.gob.ar/planificacion/registrosinterpretacionycatastro/autogestion-de-liquidacion-de-derechos-de-obra" class="btn btn-primary">M&aacute;s Infotmaci&oacute;n</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--  Fin de la Informacion para Usuarios -->
+
+       <!-- Inicio Seccion de caracteristicas-->
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Innovaciones tecnologicas al proceso inspectivo</h2>
+          <p>Todas son planteamientos extraídos de propuestas reales.</p>
+          <ul>
+             <li><strong>Registro de Obras Nuevas o en Construcci&oacute;n.</strong></li>
+             <li>Denuncias de Usuarios por diversos motivos y Origen</li>
+             <li>Control de movimientos inspectivos.  </li>
+             <li>Programaci&oacute;n de Tickets para la entidad inspeccionable.</li>
+             <li>Control de Gesti&oacute;n de Clausuras.</li>
+             <li>Confecci&oacute;n de Informes Finales en archivos PDF.</li>
+             <li>Administraci&oacute;n de par&aacute;metros generales.</li>
+          </ul>
+          <p>El objetivo del sistema de Gesti&oacute;n de Inspecciones Edilicias Municipales (GIEM) es la facilitaci&oacute;n de todo el proceso de inspecciones, desde el momento de la carga de una denuncia ó la inscripcíón de una obra, hasta los Circuitos complementarios Legales, &eacute;ste debe manejarse sobre dos grandes pilares de la tecnolog&iacute;a actual: la web y los servicios m&oacute;viles. </p>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-fluid rounded" src="images/TecnologiasObras.jpg" height="450" width="700">          
+       </div>
+      </div>
+      <!-- Fin Seccion de caracteristicas -->
+       
+     <hr>
+
+      <!-- Call to Action Section -->
+      <div class="row mb-4">
+        <div class="col-md-8">
+          <p>Para hacer una Ubicaci&oacute;n r&aacute;pida de las Zonas de inspecci&oacute;n, se puede acceder directamete al Mapa Interactivo.</p>
+        </div>
+        <div class="col-md-4">
+          <a class="btn btn-lg btn-primary btn-block" href="http://mapa.buenosaires.gob.ar/comollego/?lat=-34.620000&lng=-58.440000&zl=12&modo=transporte">Ir al Mapa Interactivo</a>
+        </div>
+      </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Grupo GIEM S.A. 2017 - 2019  -  Website Oficial: www.GIEM.com </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

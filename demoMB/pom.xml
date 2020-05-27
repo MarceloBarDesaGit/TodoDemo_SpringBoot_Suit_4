@@ -1,4 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--  
+ * Tipo: Archivo POM (Project Object Model), Es una representación XML de un proyecto Maven en un archivo (configuración).
+ * Extensión: .XML
+ * Repositorio MARVEN: https://mvnrepository.com/ 
+ * Nombre archivo: pom.xml
+ * Descripción: El POM contiene toda la información necesaria sobre un proyecto, así como configuraciones de complementos que 
+ *				se utilizarán durante el proceso de compilación. 
+ *				DEPENDENCIAS: La piedra angular del POM es su lista de dependencias . La mayoría de los proyectos dependen de 
+ *				otros para construir y ejecutar correctamente. Maven administra estas listas, descarga y vincula las dependencias 
+ *				en la compilación, así como en otros objetivos que lo requieren. Como beneficio adicional, 
+ *				Maven incorpora las dependencias transitivas, permitiendo que su lista se centre únicamente en las que su proyecto requiere.
+ * 		ESPECIFICACIONES:
+ * 			“<modelVersion>”: Indica la versión del POM y marca su sintaxis. 
+ *			“<groupId>”: Hace referencia al nombre del creador o de la entidad donde se desarrolla el proyecto.
+ *			“<artifactId>”: Es el nombre del producto de software.
+ *			“<version>”: Indica la versión de desarrollo del proyecto. El sufijo SNAPSHOT indica que aún estamos trabajando en la versión 
+ *						especificada.
+ *			“<packaging>”: Está relacionado con el formato que se seleccionado para empaquetar el proyecto, una alternativa es WAR. 
+ *			“<name>”: Es opcional y hace referencia al nombre alias del proyecto.
+ *			“<description>”: Es opcional y hace referencia a una breve descripción del producto.
+ *			“<parent>”: Define la herencia del proyecto a otros. En este caso la aplicación hereda de un proyecto Spring Boot. Por lo 
+ *			tanto se puede decir que la aplicación es una aplicación SpringBoot.
+ *
+ *		ACCIÓN:
+ *			Se elige la dependencia (se puede Buscar) y se copia el fragmento del código, el cual se copia en el 
+ *			bloque <dependencies> </dependencies> 
+ *
+ * Fecha: 24/05/2020
+ * Version:  4.0.0
+ *   
+ * Autor: Barbieri Marcelo E.
+ * Modificación: __/__/2020. 
+ * Tipo de Modificación:
+ * *******************************************************************************
+ -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -19,15 +54,19 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
+		<!-- spring-boot-starter-thymeleaf -->
+			<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+
+		<!-- org.springframework.boot -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- spring-boot-starter-test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -39,6 +78,14 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>5.4.16.Final</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

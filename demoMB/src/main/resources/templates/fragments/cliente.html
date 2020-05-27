@@ -1,0 +1,129 @@
+<head>
+  <meta charset="UTF-8" />
+</head>
+
+<nav th:fragment="panel-menu" class="panel__menu">
+  <ul class="panel__nav">
+    <li class="panel__separator" />
+    <li class="panel__item">
+      <a th:href="@{/cliente}" class="panel__option">
+        <span class="panel__option-text">Ver clientes</span>
+      </a>
+    </li>
+    <li class="panel__separator" />
+    <li class="panel__item">
+      <a th:href="@{/cliente/new}" class="panel__option">
+        <span class="panel__option-text">Nuevo cliente</span>
+      </a>
+    </li>
+    <li class="panel__separator" />
+  </ul>
+</nav>
+
+<div th:fragment="form-update">
+  <form
+    th:action="@{/cliente/update}"
+    th:object="${clienteSelected}"
+    method="post"
+  >
+    <input type="hidden" th:field="*{idCliente}" />
+
+    <div class="form__container">
+      <div class="form__item">
+        <label class="form__label" for="nombre">Nombre:</label>
+        <input
+          type="text"
+          class="form__input"
+          name="nombre"
+          id="nombre"
+          th:value="${clienteSelected.nombre}"
+          readonly
+        />
+      </div>
+      <div class="form__item">
+        <label class="form__label" for="apellido">Apellido:</label>
+        <input
+          type="text"
+          class="form__input"
+          name="apellido"
+          id="apellido"
+          th:value="${clienteSelected.apellido}"
+          readonly
+        />
+      </div>
+      <div class="form__item">
+        <label class="form__label" for="dni">N° de Documento:</label>
+        <input
+          type="text"
+          class="form__input"
+          name="dni"
+          id="dni"
+          th:value="${clienteSelected.dni}"
+          readonly
+        />
+      </div>
+      <div class="form__item">
+        <label class="form__label" for="fechaNacimiento"
+          >Fecha de Nacimiento:</label
+        >
+        <input
+          type="text"
+          class="form__input"
+          name="fechaNacimiento"
+          id="fechaNacimiento"
+          th:value="${#temporals.format(clienteSelected.fechaNacimiento, 'dd/MM/yyyy')}"
+        />
+      </div>
+      <div class="form__item">
+        <label class="form__label" for="cuit">Cuit:</label>
+        <input
+          type="text"
+          class="form__input"
+          name="cuit"
+          id="cuit"
+          th:value="${clienteSelected.cuit}"
+          readonly
+        />
+      </div>
+      <div class="form__item">
+        <label class="form__label" for="mail">Correo Electrónico:</label>
+        <input
+          type="text"
+          class="form__input"
+          name="mail"
+          id="mail"
+          th:value="${clienteSelected.mail}"
+        />
+      </div>
+      <div class="form__item">
+        <label class="form__label" for="telefono">Teléfono:</label>
+        <input
+          type="text"
+          class="form__input"
+          name="contacto.telefono"
+          id="telefono"
+          th:value="${clienteSelected.contacto.telefono}"
+        />
+      </div>
+      <div class="form__item">
+        <label class="form__label" for="domicilio">Domicilio:</label>
+        <input
+          type="text"
+          class="form__input"
+          name="contacto.domicilio"
+          id="domicilio"
+          th:value="${clienteSelected.contacto.domicilio}"
+        />
+      </div>
+    </div>
+
+    <div class="form__group-btn">
+      <button type="submit" class="form__btn form__btn--submit">
+        Modificar
+      </button>
+      <button type="button" class="form__btn form__btn--cancel">
+        <a class="form__btn-link" th:href="@{/cliente}">Cancelar</a>
+      </button>
+    </div>
+  </form>
+</div>

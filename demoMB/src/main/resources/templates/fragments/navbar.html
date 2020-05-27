@@ -1,0 +1,114 @@
+<head>
+	 <meta charset="UTF-8" />
+</head>
+
+<!-- 
+*********************************
+     left-navbar 
+*********************************
+-->
+
+<nav th:fragment="left-navbar" class="navbar">
+  <ul class="navbar__nav">
+    <li class="navbar__logo">
+      <a class="navbar__link">
+        <span class="navbar__link-text navbar__link-text--logo">UNLA</span>
+        <i class="fas fa-angle-double-right navbar__icon--logo"></i>
+      </a>
+    </li>
+
+    <li class="navbar__item">
+      <a th:href="@{/index}" class="navbar__link">
+        <i class="fas fa-home navbar__icon"></i>
+
+        <span class="navbar__link-text">Inicio</span>
+      </a>
+    </li>
+
+    <li class="navbar__item">
+      <a class="navbar__link">
+		<i class="fas fa-store-alt navbar__icon"></i>
+		
+        <span class="navbar__link-text">Locales</span>
+      </a>
+    </li>
+
+    <li class="navbar__item">
+      <a class="navbar__link">
+        <i class="fas fa-boxes navbar__icon"></i>
+
+        <span class="navbar__link-text">Productos</span>
+      </a>
+    </li>
+
+    <li class="navbar__item">
+      <a th:href="@{/cliente}" class="navbar__link">
+        <i class="fas fa-users navbar__icon"></i>
+
+        <span class="navbar__link-text">Clientes</span>
+      </a>
+    </li>
+
+    <li class="navbar__item">
+      <a class="navbar__link">
+        <i class="fas fa-file-invoice-dollar navbar__icon"></i>
+
+        <span class="navbar__link-text">Facturación</span>
+      </a>
+    </li>
+
+    <li class="navbar__item">
+      <a class="navbar__link">
+        <i class="fas fa-file-alt navbar__icon"></i>
+
+        <span class="navbar__link-text">Solicitudes</span>
+      </a>
+    </li>
+
+    <li class="navbar__item">
+      <a class="navbar__link">
+        <i class="fas fa-map-marked-alt navbar__icon"></i>
+
+        <span class="navbar__link-text">Mapa</span>
+      </a>
+    </li>
+
+    <li class="navbar__item">
+      <a th:href="@{/empleado}" class="navbar__link">
+        <i class="fas fa-cogs navbar__icon"></i>
+        <span class="navbar__link-text">Empleados</span>
+      </a>
+    </li>
+
+    <li class="navbar__item">
+      <a class="navbar__link light" id="theme-color">
+        <i class="fas fa-adjust navbar__icon"></i>
+        <span class="navbar__link-text">Modo Oscuro</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- 
+*********************************
+     top-navbar 
+*********************************
+-->
+
+<nav th:fragment="top-navbar" class="navbar-top">
+  <ul class="navbar-top__nav">
+  
+    <li class="navbar-top__item">
+      <a class="navbar-top__link" title="Mi Usuario">
+        <i class="fas fa-user navbar__icon"></i>
+      </a>
+    </li>
+  
+    <li>
+      <a class="navbar-top__link" title="Cerrar Sesión">
+        <i class="fas fa-sign-out-alt navbar__icon"></i>
+      </a>
+    </li>
+    
+  </ul>
+</nav>
